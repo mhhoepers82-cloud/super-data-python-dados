@@ -13,3 +13,19 @@
 # Modificar todas as demais funções de editar e consultar
 # Alterar a tabela de clientes adicionando a coluna de endereço, telefone, email, limite_credito
 # Modificar as funções de cadastro, editar e consultar
+
+# Ex. 02: Criar um novo banco de dados chamado helpdesk:
+# - Criar uma tabela de categorias com: nome, cor da categoria (hexadecimal) e id
+#       Fazer o consultar categorias no python
+#       Fazer o cadastro da categoria no python
+# - Criar uma tabela de tickets com os seguintes campos:
+# id int
+# numero_protocolo: str
+# titulo: str
+# descricao: str
+# status: str(ABERTO, EM_ANALISE, RESOLVIDO, CANCELADO)
+# prioridade: str(BAIXA, MEDIA, ALTA)
+# setor: (TI, RH, FINANCEIRO, ADMINISTRATIVO, MANUTENCAO)
+# descricao_solucao: str
+# data_criacao: datetime
+# Fazer o CRUD em python para permitir interagir com a tabela de tickets

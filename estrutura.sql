@@ -53,3 +53,58 @@ WHERE id = 3;
 -- Delete: DELETE
 
 -- py -m pip install mysql-connector-python
+
+#-----------------------------------------------------
+
+CREATE DATABASE loja_db;
+
+-- Apagar o banco de dados
+-- DROP DATABASE loja_db;
+
+USE loja_db;
+
+CREATE TABLE cliente (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE cliente
+ADD COLUMN cnpj VARCHAR(18);
+
+ALTER TABLE cliente
+ADD COLUMN endereco VARCHAR(100);
+
+ALTER TABLE cliente
+ADD COLUMN email VARCHAR(50);
+
+ALTER TABLE cliente
+ADD COLUMN limite FLOAT(50);
+
+SELECT id, nome, FROM cliente;
+
+INSERT INTO cliente (id, nome)
+VALUES
+    ("1982", "Mateus Hoepers"),
+    ("1983", "Thais Dada Hoepers");
+    
+
+SELECT id, nome, descricao FROM produtos;
+
+SELECT id, nome, descricao FROM produtos WHERE id = 4;
+
+DELETE FROM produtos WHERE id = 4;
+
+INSERT INTO produtos (nome, descricao)
+VALUE ("Sony Ericson W 200i", "Celular Infravermelho");
+
+SELECT id, nome, descricao
+FROM produtos;
+
+-- Consultar os produtos que têm NULL na descrição
+SELECT id, nome, descricao
+FROM produtos
+WHERE descricao IS NULL;
+
+UPDATE produtos
+SET descricao = "GPS, laranja"
+WHERE id = 3;
