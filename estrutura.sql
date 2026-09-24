@@ -108,3 +108,15 @@ WHERE descricao IS NULL;
 UPDATE produtos
 SET descricao = "GPS, laranja"
 WHERE id = 3;
+
+
+#-----------------------------------------------------
+
+CREATE TABLE fonecedores(
+    id INT PRIMARY KEY AUTO_INCREMENT
+    cnpj VARCHAR(18) NOT NULL,
+    razao_social VARCHAR(100) NOT NULL,
+    nome_fantasia VARCHAR(100) NOT NULL,
+    cep VARCHAR(10) NOT NULL,
+    numero VARCHAR(10)
+);
