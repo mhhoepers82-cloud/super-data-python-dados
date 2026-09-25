@@ -1,5 +1,7 @@
+#clone github professor
 
 from banco_dados import conectar
+
 
 def consultar_produtos():
     conexao = conectar()
@@ -9,17 +11,15 @@ def consultar_produtos():
     cursor.close()
     conexao.close()
 
-    #fetchall = consulta todos!!
-
     print("Produtos:")
     for produto in registros:
-    #print("Id:, produto[0],"\nNome:", produto[1], "\nDescrição:", produto[2], "\n\n")
+        # print("Id:", produto[0], "\nNome:", produto[1], "\nDescrição:", produto[2], "\n\n")
         print(produto[0], "=>", produto[1], "=>", produto[2])
 
 
 def cadastrar_produto():
     nome = input("Digite o nome do produto: ")
-    descricao = input("Digite a Descriçao: ")
+    descricao = input("Digite a descrição: ")
 
     conexao = conectar()
     cursor = conexao.cursor()
@@ -42,21 +42,20 @@ def apagar_produto():
     cursor.close()
     conexao.close()
     print("Produto apagado com sucesso")
-    
-    
+
+
 def editar_produto():
     id_produto = (int(input("Digite o id do produto para editar: ")))
     novo_nome = input("Digite o nome do produto: ")
-    nova_descrição = input("Digite a descrição: ")
+    nova_descricao = input("Digite a descrição: ")
 
     conexao = conectar()
     cursor = conexao.cursor()
     cursor.execute(
-        "UPDATE produtos SET nome = %s, descricao = %s WHERE id  = %s",
-        (novo_nome, nova_descrição, id_produto)
-   )
-
+        "UPDATE produtos SET nome = %s, descricao = %s WHERE id = %s",
+        (novo_nome, nova_descricao, id_produto)
+    )
     conexao.commit()
     cursor.close()
     conexao.close()
-    print("Produto alterado com sucesso!!")
+    print("Produto alterado com sucesso")

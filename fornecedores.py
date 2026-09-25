@@ -5,6 +5,25 @@ from requests import get
 from banco_dados import conectar
 
 
+# Requisição é uma forma de uma página/mobile/sistema fazer 
+# uma consulta para outro sistema
+# Tipos de requisições API RESTful
+# GET:      Consultar todos/Consultar específico
+# POST:     Cadastro
+# PUT:      Alterar dados
+# DELETE:   APAGAR
+
+# HTTP Status Code: resposta da requisição
+# 200       OK  (deu boa)
+# 201       CREATED (criado com sucesso)
+# 204       NO CONTENT (deu boa, mas o back n trouxe nada de resposta)
+# 400       BAD REQUEST 
+# 401       UNAUTHORIZED (não está logado)
+# 403       FORBIDEN (não tem permissão para acessar o recurso)
+# 422       UNPROCESSABLE ENTITY
+# 404       NOT FOUND (recurso não encontrado, tipo tentou procurar um clietne com um id que não existe)
+# 500       INTERNAL SERVER ERROR (deu 'm' no back-end)
+
 def consultar_fornecedores():
     with conectar() as conexao:
         with conexao.cursor() as cursor:
