@@ -1,6 +1,8 @@
 
 from clientes import apagar_cliente, cadastrar_cliente, consultar_cliente, editar_cliente
 from produtos import apagar_produto, cadastrar_produto, consultar_produtos, editar_produto
+from fornecedores import cadastrar_fornecedor, consultar_fornecedores
+
 
 
 def limpar_terminal():
@@ -17,6 +19,8 @@ if __name__ == "__main__":
 6  -Cadastrar cliente
 7  -Apagar cliente
 8  -Editar cliente
+9  -Consultar Fornecedores
+10 -Cadastrar Fornecedor
 99 -Sair
 
 Digitar o menu desejado:"""
@@ -39,7 +43,11 @@ Digitar o menu desejado:"""
         elif menu_escolhido == 7:
             apagar_cliente()
         elif menu_escolhido == 8:
-            editar_cliente()   
+            editar_cliente()  
+        elif menu_escolhido == 9:
+            consultar_fornecedores()
+        elif menu_escolhido == 10:
+            cadastrar_fornecedor()
         else:
             print("Opção inválida!!") 
     

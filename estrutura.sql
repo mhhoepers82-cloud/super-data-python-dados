@@ -120,3 +120,23 @@ CREATE TABLE fonecedores(
     cep VARCHAR(10) NOT NULL,
     numero VARCHAR(10)
 );
+
+INSERT INTO fornecedores(
+    cnpj,
+    razao_social,
+    nome_fantasia,
+    cep,
+    numero
+) VALUES (
+    '12.345.678/0001-90',
+    'Empresa Exemplo Ltda',
+    'Empresa Exemplo',
+    '88000-000',
+    '123'
+);
+
+
+ALTER TABLE produtos
+ADD COLUMN id_fornecedor INT,
+ADD CONSTTRAINT produtos_fornecedor_fk
+FOREING KEY (id_fornecedor) REFERENCES fornecedores(id);
